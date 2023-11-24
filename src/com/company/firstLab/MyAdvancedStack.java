@@ -1,4 +1,4 @@
-package com.company;
+package com.company.firstLab;
 
 import java.util.Arrays;
 
@@ -9,7 +9,7 @@ public class MyAdvancedStack {
     private int[] stackCapacity = {0, 0, 0};
 
 
-    MyAdvancedStack(int capacity) {
+    public MyAdvancedStack(int capacity) {
         this.initialCapacity = capacity;
         this.buffer = new int[initialCapacity * 3];
         stackCapacity[0] = capacity;
@@ -23,7 +23,7 @@ public class MyAdvancedStack {
     //увеличиваем стек вдвое, т.е если по 15, то общая длина 45. И если надо увеличить пространство, то увеличиваем в два раза.
 
 
-    void push(int stackNum, int value) {
+    public void push(int stackNum, int value) {
         if (check(stackNum)) increaseStackCapacity(stackNum);
         buffer[stackPointer[stackNum]] = value;
         stackPointer[stackNum]++;
@@ -57,7 +57,7 @@ public class MyAdvancedStack {
     }
 
 
-    int pop(int stackNum) throws Exception {
+    public int pop(int stackNum) throws Exception {
         if (stackPointer[stackNum] == 0) throw new Exception("Stack is empty");
         // int index = stackNum * stackSize + stackPointer[stackNum];
         stackPointer[stackNum]--;
@@ -77,7 +77,7 @@ public class MyAdvancedStack {
         return stackPointer[stackNum] == 0;
     }
 
-    void printStack() {
+    public void printStack() {
         for (int e : buffer) System.out.print(e + " ");
         System.out.println();
         System.out.println("Size " + buffer.length);

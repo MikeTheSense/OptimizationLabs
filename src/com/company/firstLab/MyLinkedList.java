@@ -1,4 +1,4 @@
-package com.company;
+package com.company.firstLab;
 
 public class MyLinkedList<E> {
     Node head;
@@ -7,7 +7,7 @@ public class MyLinkedList<E> {
         head = new Node(value, head);
     }
 
-    void printList() {
+    public void printList() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.value + " ");
@@ -16,7 +16,7 @@ public class MyLinkedList<E> {
         System.out.println();
     }
 
-    void removeDuplicates() {
+    public void removeDuplicates() {
         if (head == null) return;
         Node current = head;
         while (current != null) {

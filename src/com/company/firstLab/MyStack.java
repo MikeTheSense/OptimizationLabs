@@ -1,4 +1,4 @@
-package com.company;
+package com.company.firstLab;
 
 public class MyStack {
     //dynamic length

@@ -1,5 +1,15 @@
 package com.company;
 
+import com.company.FifthLab.MyFifth;
+import com.company.firstLab.MyAdvancedStack;
+import com.company.firstLab.MyArray;
+import com.company.firstLab.MyLinkedList;
+import com.company.fourthLab.MyFourth;
+import com.company.secondLab.MyBinaryTree;
+import com.company.secondLab.TreePrinter;
+import com.company.thirdLab.MyBitOperation;
+import com.sun.source.tree.Tree;
+
 import java.util.*;
 
 
@@ -11,13 +21,52 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+        //firstLab();
+        //secondLab();
+        //thirdLab();
+        //fourthLab();
+        fifthLab();
+    }
+
+    public static void secondLab() throws Exception{
+        MyBinaryTree bin = new MyBinaryTree();
+        bin.add(20);
+        bin.add(2);
+        bin.add(4);
+        bin.add(6);
+        bin.add(8);
+        bin.add(10);
+        bin.add(1);
+        bin.add(3);
+        bin.add(5);
+        bin.add(7);
+        bin.add(11);
+
+        bin.print();
+        bin.getLevelLinkedList();
+    }
+    public static void thirdLab() throws Exception{
+        MyBitOperation.swapInt(345);
+    }
+
+    public static void fourthLab(){
+        int n = 5;
+        String myTrace = "My trace: ";
+        System.out.println(MyFourth.myReccursion(n, new long[n]));
+    }
+
+    public static void fifthLab(){
+        System.out.println(MyFifth.getWrongNumber(5));
+    }
+
+    public static void firstLab() throws Exception {
         String str = "Abcfdsfasdasfasdfasdf";
         String str1 = "Abcdefrtgnm,./';lkjfjlsak;dhsafdh ulnsafdlibafssafdjkjkashjsafjkkjasf";
         String str2 = "qazxswedcrfvtgbyhnujmik,ol.p;/[']";
 
-        System.out.println(isUniqueSymbols(str2));
-        System.out.println(isUniqueSymbolsAdvanced(str2));
-        System.out.println(isUniqueWithoutStructure(str2));
+        System.out.println(MyArray.isUniqueSymbols(str2));
+        System.out.println(MyArray.isUniqueSymbolsAdvanced(str2));
+        System.out.println(MyArray.isUniqueWithoutStructure(str2));
 
         MyLinkedList<Integer> list = new MyLinkedList<>();
         list.add(1);
@@ -73,48 +122,5 @@ public class Main {
         mas.printStack();
     }
 
-    public static boolean isUniqueSymbols(String str) {
-        if (str.length() > 256) return false;
-        Set<Character> set = new HashSet<>();
-        for (int i = 0; i < str.length(); i++) {
-            if (!(set.add(str.charAt(i)))) return false;
-        }
-        return true;
-    }
-
-    public static boolean isUniqueSymbolsAdvanced(String str) {
-        if (str.length() > 256) return false;
-        char[] myArray = str.toCharArray();
-        boolean[] bool = new boolean[256];
-        for (int i = 0; i < str.length(); i++) {
-            if (!(bool[str.charAt(i)]))
-                bool[str.charAt(i)] = true;
-            else return false;
-        }
-        return true;
-    }
-
-    public static boolean isUniqueWithoutStructure(String str) {
-        if (str.length() > 256) return false;
-        int i = 0;
-        while(i < str.length()) {
-            int j = i+1;
-            char copy = str.charAt(i);
-            while(j < str.length()) {
-                if (str.charAt(j) == copy) return false;
-                else j++;
-            }
-            i++;
-        }
-        return true;
-    }
-
-    //Add 3rd method without based structure
-
-
-    public static <E> LinkedList<E> test(LinkedList<E> list) {
-        Set<E> set = new HashSet<>(list);
-        return new LinkedList<E>(set);
-    }
 
 }
