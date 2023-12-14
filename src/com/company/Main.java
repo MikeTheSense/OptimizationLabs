@@ -6,11 +6,12 @@ import com.company.firstLab.MyArray;
 import com.company.firstLab.MyLinkedList;
 import com.company.fourthLab.MyFourth;
 import com.company.secondLab.MyBinaryTree;
-import com.company.secondLab.TreePrinter;
+import com.company.sixthLab.decks.BlackJackDeck;
+import com.company.sixthLab.games.BlackJackGame;
+import com.company.sixthLab.hands.BlackJackHand;
 import com.company.thirdLab.MyBitOperation;
-import com.sun.source.tree.Tree;
 
-import java.util.*;
+import javax.management.monitor.GaugeMonitorMBean;
 
 
 //1 -- without any structure
@@ -25,7 +26,8 @@ public class Main {
         //secondLab();
         //thirdLab();
         //fourthLab();
-        fifthLab();
+        //fifthLab();
+        sixthLab();
     }
 
     public static void secondLab() throws Exception{
@@ -47,6 +49,20 @@ public class Main {
     }
     public static void thirdLab() throws Exception{
         MyBitOperation.swapInt(345);
+    }
+    public static void sixthLab(){
+//        BlackJackDeck blackJackDeck = new BlackJackDeck();
+//        //blackJackDeck.print();
+//        System.out.println(blackJackDeck.drawCard());
+//        System.out.println(blackJackDeck);
+//
+//        BlackJackHand hand = new BlackJackHand();
+//        hand.takeCardFromDeck(blackJackDeck);
+//        hand.takeCardFromDeck(blackJackDeck);
+//        System.out.println(hand.calculateValue());
+//        System.out.println(hand);
+        BlackJackGame blackJackGame = new BlackJackGame();
+        blackJackGame.startRound();
     }
 
     public static void fourthLab(){
